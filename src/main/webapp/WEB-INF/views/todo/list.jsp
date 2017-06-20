@@ -7,6 +7,24 @@
 .strike {
     text-decoration: line-through;
 }
+.alert {
+    border: 1px solid;
+}
+
+.alert-error {
+    background-color: #c60f13;
+    border-color: #970b0e;
+    color: white;
+}
+
+.alert-success {
+    background-color: #5da423;
+    border-color: #457a1a;
+    color: white;
+}
+.text-error {
+    color: #c60f13;
+}
 </style>
 </head>
 <body>
@@ -15,7 +33,7 @@
     	<t:messagesPanel />
         <form:form action="${pageContext.request.contextPath}/todo/create" method="post" modelAttribute="todoForm">
             <form:input path="todoTitle" />
-            <form:errors path="todoTitle" />
+            <form:errors path="todoTitle" cssClass="text-error" />
             <form:button>Create Todo</form:button>
         </form:form>
     </div>
