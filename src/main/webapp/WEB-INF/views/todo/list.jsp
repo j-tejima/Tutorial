@@ -47,6 +47,14 @@
                         </c:when>
                         <c:otherwise>
                             ${f:h(todo.todoTitle)}
+                            <form:form
+                                action="${pageContext.request.contextPath}/todo/finish"
+                                method="post"
+                                modelAttribute="todoForm"
+                                cssStyle="display: inline-block;">
+                                <form:hidden path="todoId" value="${f:h(todo.todoId)}" />
+                                <form:button>Finish</form:button>
+                            </form:form>
                          </c:otherwise>
                     </c:choose></li>
             </c:forEach>
